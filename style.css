@@ -1,0 +1,35 @@
+.header {
+    background-color: rgb(179, 173, 121);
+  }
+  .grid_container {
+    width: 1180px;
+    height: 1180px;
+    background-color: burlywood;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .box {
+    cursor: pointer;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .boxFacile {
+    width: calc(1180px / 10);
+    height: calc(1180px / 10);
+  }
+  .boxMedio {
+    width: calc(1180px / 9);
+    height: calc(1180px / 9);
+  }
+  .boxDifficile {
+    width: calc(1180px / 7);
+    height: calc(1180px / 7);
+  }
+  .safe {
+    background-color: blue;
+  }
+  
