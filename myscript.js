@@ -1,5 +1,14 @@
 // richiamo il tasto inizia
 let inizia = document.getElementById("inizia");
+// variabile bombe
+let bombPosition = [];
+let bomb = 16;
+
+// funzione bombe
+function bombGrid(allBombs) {
+  let bombCasual = parseInt(Math.floor(Math.random() * allBombs));
+  return bombCasual;
+}
 
 inizia.addEventListener("click", function () {
   // richiamo la griglia
@@ -12,6 +21,12 @@ inizia.addEventListener("click", function () {
     for (i = 1; i <= 100; i++) {
       grid.innerHTML += `<div class="box boxFacile">${i}</div>`;
     }
+    while (bombPosition.length < bomb) {
+      let num = bombGrid(100);
+      if (!bombPosition.includes(num));
+      bombPosition.push(num);
+    }
+    console.log(bombPosition);
   } else if (level == 2) {
     for (i = 1; i <= 81; i++) {
       grid.innerHTML += `<div class="box boxMedio">${i}</div>`;
@@ -26,7 +41,13 @@ inizia.addEventListener("click", function () {
   for (i = 0; i < box.length; i++) {
     box[i].addEventListener("click", function () {
       this.classList.add("safe");
-      console.log(this.innerHTML);
     });
   }
 });
+let box = document.getElementsByClassName("box");
+  for (b = 0; b < bombPosition.length; b++) {
+    box[b].addEventListener("click", function () {
+      this.classList.add("bomb");
+    });
+  }
+
